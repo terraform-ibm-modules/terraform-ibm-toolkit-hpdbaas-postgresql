@@ -8,7 +8,7 @@ variable "resource_group_name" {
 variable "hpcs_resource_group_name" {
   type        = string
   description = "The resource group where the hpcs instance has been provisioned. If not provided defaults to the same resource group as the MongoDB instance"
-  
+
 }
 
 variable "ibmcloud_api_key" {
