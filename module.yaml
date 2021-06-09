@@ -1,10 +1,11 @@
-name: ibm-mongodb
+name: ibm-hbdbaas-postgresql
 type: terraform
-description: Module to provision Hyper Protect DBaaS for MongoDB instance
+description: Module to provision Hyper Protect DBaaS for Postgresql instance
 tags:
     - tools
     - infrastructure
-    - mongodb
+    - postgresql
+    - hyper protect
     - saas
 versions:
 - platforms: []
