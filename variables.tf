@@ -40,8 +40,8 @@ variable "label" {
 # mongodb-flexible or mongodb-free
 variable "plan" {
   type        = string
-  description = "The type of plan the service instance should run under (mongodb-free, mongodb-flexible)"
-  default     = "mongodb-free"
+  description = "The type of plan the service instance should run under (postgresql-free, postgresql-flexible)"
+  default     = "postgresql-free"
 }
 
 variable "private_endpoint" {
@@ -99,4 +99,10 @@ variable "cpu" {
   type        = string
   description = "The name of the database admin"
   default     = "1"
+}
+
+variable "db_version" {
+  type        = string
+  description = "The version of postgresql database to provision"
+  default     = "10"
 }
