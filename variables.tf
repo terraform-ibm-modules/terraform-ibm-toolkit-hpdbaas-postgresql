@@ -1,11 +1,11 @@
 variable "ibmcloud_api_key" {
   type        = string
   description = "The api key for IBM Cloud access"
-} 
+}
 
 variable "resource_group_name" {
   type        = string
-  description = "Resource group where the cluster has been provisioned."  
+  description = "Resource group where the cluster has been provisioned."
 }
 
 variable "region" {
@@ -34,7 +34,7 @@ variable "name_prefix" {
 variable "label" {
   type        = string
   description = "The label used to build the database name, along with the name_prefix"
-  default     = "hpdbaas-mongodb"
+  default     = "hpdbaas-postrgesql"
 }
 
 # mongodb-flexible or mongodb-free
