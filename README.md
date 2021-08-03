@@ -2,8 +2,8 @@
 ## Example usage
 
 ```hcl-terraform
-module "dev_infrastructure_hpdbaas_mongodb" {
-  source = "github.com/ibm-garage-cloud/terraform-ibm-hpdbaas-mongodb.git?ref=v1.0.0"
+module "dev_infrastructure_hpdbaas_postgresql" {
+  source = "github.com/cloud-native-toolkit/terraform-ibm-hpdbaas-postgresql.git?ref=v1.0.0"
 
   resource_group_name = var.resource_group_name
   resource_location   = var.region
