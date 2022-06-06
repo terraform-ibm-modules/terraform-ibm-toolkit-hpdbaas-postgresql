@@ -32,7 +32,7 @@ locals {
 
 resource null_resource print_params {
   provisioner "local-exec" {
-    command = "echo \"parameters: ${jsonencode(local.parameters)}\""
+    command = "echo 'parameters: ${jsonencode(local.parameters)}'"
   }
 }
 
