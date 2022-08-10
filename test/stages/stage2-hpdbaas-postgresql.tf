@@ -1,3 +1,9 @@
+resource "random_password" "password" {
+  length           = 16
+  special          = true
+  override_special = "!#$%&*()-_=+[]{}<>:?"
+}
+
 module "hpdbaas_postgresql" {
   source = "./module"
 
@@ -7,5 +13,5 @@ module "hpdbaas_postgresql" {
   name_prefix         = "${var.name_prefix}_2"
   cluster_name        = "test"
   admin_name          = "admin"
-  password            = "M4C0mpl3xP@ssw0rd"
+  password            = random_password.password.result
 }
