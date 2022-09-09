@@ -1,4 +1,4 @@
-id: github.com/cloud-native-toolkit/terraform-ibm-hpdbaas-postgresql
+id: github.com/terraform-ibm-modules/terraform-ibm-toolkit-hpdbaas-postgresql
 name: ibm-hbdbaas-postgresql
 type: terraform
 description: Module to provision Hyper Protect DBaaS for PostgreSQL instance
@@ -9,6 +9,102 @@ tags:
   - hyper protect
   - saas
 versions:
+  - platforms: []
+    dependencies:
+      - id: resource_group
+        refs:
+          - source: github.com/cloud-native-toolkit/terraform-ibm-resource-group
+            version: '>= 2.1.0'
+    variables:
+      - name: ibmcloud_api_key
+        type: string
+        description: The api key for IBM Cloud access
+        scope: global
+      - name: resource_group_name
+        type: string
+        description: Resource group where the cluster has been provisioned.
+        moduleRef:
+          id: resource_group
+          output: name
+      - name: region
+        type: string
+        description: Geographic location of the resource (e.g. us-south, us-east)
+      - name: provision
+        type: bool
+        description: >-
+          Flag indicating that the instance should be provisioned. If false then
+          it assumed that an instance already exists.
+        default: true
+      - name: tags
+        type: list(string)
+        description: Tags that should be applied to the service
+        default: []
+      - name: name_prefix
+        type: string
+        description: >-
+          The prefix name for the service. If not provided it will default to
+          the resource group name
+        default: ''
+        scope: global
+      - name: label
+        type: string
+        description: The label used to build the database name, along with the name_prefix
+        default: hpdbaas-postrgesql
+      - name: plan
+        type: string
+        description: >-
+          The type of plan the service instance should run under
+          (postgresql-free, postgresql-flexible)
+        default: postgresql-free
+      - name: private_endpoint
+        type: string
+        description: >-
+          Flag indicating that the service should be created with private
+          endpoints
+        default: 'true'
+      - name: role
+        type: string
+        description: >-
+          The role of the generated credential (Viewer, Administrator, Operator,
+          Editor)
+        default: Editor
+      - name: hpcs_instance_id
+        type: string
+        description: The id of the hpcs instance
+        default: ''
+      - name: hpcs_key
+        type: string
+        description: The id of the key in the hpcs instance
+        default: ''
+      - name: cluster_name
+        type: string
+        description: The name of the database cluster
+      - name: admin_name
+        type: string
+        description: The name of the database admin
+      - name: password
+        type: string
+        description: >-
+          The password of database admin(15 characters minimum, at least one
+          uppercase character, one lowercase character and one number)
+      - name: storage
+        type: string
+        description: The name of the database admin
+        default: 5GiB
+      - name: memory
+        type: string
+        description: The name of the database admin
+        default: 3GiB
+      - name: cpu
+        type: string
+        description: The name of the database admin
+        default: '1'
+      - name: db_version
+        type: string
+        description: The version of postgresql database to provision
+        default: '10'
+    version: v1.1.2
+    outputs: []
   - platforms: []
     dependencies:
       - id: resource_group
