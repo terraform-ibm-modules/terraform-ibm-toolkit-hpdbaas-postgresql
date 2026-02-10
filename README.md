@@ -1,5 +1,7 @@
 # HPDBAAS-Postgresql terraform module
 
+:warning: This module is no longer maintained. Please use [terraform-ibm-icd-postgresql](https://github.com/terraform-ibm-modules/terraform-ibm-icd-postgresql) for configuring IBM Cloud Databases for PostgreSQL.
+
 Terraform module to provision an instance of HPDBAAS-Postgresql into an account.
 
 ## Software dependencies
